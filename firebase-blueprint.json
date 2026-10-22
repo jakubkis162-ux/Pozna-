@@ -1,0 +1,80 @@
+{
+  "entities": {
+    "Task": {
+      "title": "Task",
+      "description": "Študentské zadanie, domáca úloha, učenie alebo projekt",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identifikátor úlohy"
+        },
+        "userId": {
+          "type": "string",
+          "description": "ID autentifikovaného používateľa"
+        },
+        "title": {
+          "type": "string",
+          "description": "Názov zadania",
+          "maxLength": 300
+        },
+        "category": {
+          "type": "string",
+          "description": "Kategória: ucenie, uloha alebo projekt",
+          "enum": ["ucenie", "uloha", "projekt"]
+        },
+        "notes": {
+          "type": "string",
+          "description": "Voliteľné poznámky k zadaniu",
+          "maxLength": 2000
+        },
+        "isMultiDay": {
+          "type": "boolean",
+          "description": "Či je úloha rozložená na viac dní"
+        },
+        "scheduledDate": {
+          "type": "string",
+          "description": "Dátum dňa kedy sa študent ide učiť (YYYY-MM-DD)"
+        },
+        "estimatedMinutes": {
+          "type": "number",
+          "description": "Odhadovaný čas v minútach"
+        },
+        "completed": {
+          "type": "boolean",
+          "description": "Stav vybavenia celej úlohy"
+        },
+        "completedAt": {
+          "type": "string",
+          "description": "Čas vybavenia úlohy"
+        },
+        "parts": {
+          "type": "array",
+          "description": "Rozpis jednotlivých častí na dni pre viacdňovú úlohu"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Čas vytvorenia záznamu"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "Čas poslednej aktualizácie"
+        }
+      },
+      "required": [
+        "userId",
+        "title",
+        "category",
+        "isMultiDay",
+        "completed",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/tasks/{taskId}": {
+      "schema": "Task",
+      "description": "Kolekcia osobných zadaní konkrétneho študenta"
+    }
+  }
+}

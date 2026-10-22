@@ -1,0 +1,6 @@
+{
+  "name": "Poznač - Plánovač zadaní a úloh",
+  "description": "Rýchle zaznamenávanie úloh po hodine, rozloženie projektov na viac dní a presný odhad času bez zbytočného kalendára.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

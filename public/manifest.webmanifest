@@ -1,0 +1,17 @@
+{
+  "name": "Poznač - Plánovač zadaní a úloh",
+  "short_name": "Poznač",
+  "description": "Rýchle zaznamenávanie úloh po hodine, rozloženie na viac dní a odškrtávanie potiahnutím.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
